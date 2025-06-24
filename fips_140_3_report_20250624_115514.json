@@ -1,0 +1,115 @@
+{
+  "test_summary": {
+    "total_tests": 14,
+    "passed": 13,
+    "failed": 0,
+    "errors": 0,
+    "warnings": 1,
+    "start_time": "2025-06-24T11:55:14.276176",
+    "end_time": "2025-06-24T11:55:14.843385"
+  },
+  "test_results": [
+    {
+      "test_name": "FIPS Mode Check",
+      "status": "WARNING",
+      "details": "System is not in FIPS mode - tests show algorithm compatibility only",
+      "execution_time": 0,
+      "timestamp": "2025-06-24T11:55:14.323152"
+    },
+    {
+      "test_name": "OS Random Generation",
+      "status": "PASS",
+      "details": "Generated 32 random bytes",
+      "execution_time": 3.5762786865234375e-06,
+      "timestamp": "2025-06-24T11:55:14.323171"
+    },
+    {
+      "test_name": "Secrets Module",
+      "status": "PASS",
+      "details": "Generated 32 secure random bytes",
+      "execution_time": 9.5367431640625e-06,
+      "timestamp": "2025-06-24T11:55:14.323177"
+    },
+    {
+      "test_name": "Hash Function - SHA-256",
+      "status": "PASS",
+      "details": "Generated digest: 6161cb171129f504...",
+      "execution_time": 0.00010037422180175781,
+      "timestamp": "2025-06-24T11:55:14.323283"
+    },
+    {
+      "test_name": "Hash Function - SHA-384",
+      "status": "PASS",
+      "details": "Generated digest: cc1ae3d6cae7ad4d...",
+      "execution_time": 5.4836273193359375e-06,
+      "timestamp": "2025-06-24T11:55:14.323290"
+    },
+    {
+      "test_name": "Hash Function - SHA-512",
+      "status": "PASS",
+      "details": "Generated digest: b70ba46371eefff1...",
+      "execution_time": 2.384185791015625e-06,
+      "timestamp": "2025-06-24T11:55:14.323293"
+    },
+    {
+      "test_name": "Hash Function - SHA-224",
+      "status": "PASS",
+      "details": "Generated digest: fbc89297c8b3e089...",
+      "execution_time": 1.6689300537109375e-06,
+      "timestamp": "2025-06-24T11:55:14.323296"
+    },
+    {
+      "test_name": "HMAC-SHA256",
+      "status": "PASS",
+      "details": "Generated MAC: 18da91fc4cb7786a...",
+      "execution_time": 1.621246337890625e-05,
+      "timestamp": "2025-06-24T11:55:14.323332"
+    },
+    {
+      "test_name": "HMAC-SHA384",
+      "status": "PASS",
+      "details": "Generated MAC: ce25080d0a8aa3cc...",
+      "execution_time": 5.0067901611328125e-06,
+      "timestamp": "2025-06-24T11:55:14.323339"
+    },
+    {
+      "test_name": "HMAC-SHA512",
+      "status": "PASS",
+      "details": "Generated MAC: 8e50f4e2709f0527...",
+      "execution_time": 3.337860107421875e-06,
+      "timestamp": "2025-06-24T11:55:14.323344"
+    },
+    {
+      "test_name": "AES-256-GCM Encryption",
+      "status": "PASS",
+      "details": "Encrypted/decrypted 35 bytes",
+      "execution_time": 0.000766754150390625,
+      "timestamp": "2025-06-24T11:55:14.324117"
+    },
+    {
+      "test_name": "RSA-2048 Encryption",
+      "status": "PASS",
+      "details": "RSA key pair generated and tested successfully",
+      "execution_time": 0.21830248832702637,
+      "timestamp": "2025-06-24T11:55:14.542446"
+    },
+    {
+      "test_name": "PBKDF2-SHA256",
+      "status": "PASS",
+      "details": "Derived 32-byte key with 100,000 iterations",
+      "execution_time": 0.0214993953704834,
+      "timestamp": "2025-06-24T11:55:14.563994"
+    },
+    {
+      "test_name": "RSA-PSS Digital Signature",
+      "status": "PASS",
+      "details": "Signature generated and verified successfully",
+      "execution_time": 0.27913951873779297,
+      "timestamp": "2025-06-24T11:55:14.843171"
+    }
+  ],
+  "system_info": {
+    "python_version": "3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0]",
+    "platform": "linux"
+  }
+}

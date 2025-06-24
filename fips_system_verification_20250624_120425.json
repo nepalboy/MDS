@@ -1,0 +1,121 @@
+{
+  "verification_summary": {
+    "total_checks": 14,
+    "enabled": 0,
+    "passed": 2,
+    "warnings": 1,
+    "failed": 0,
+    "errors": 0,
+    "start_time": "2025-06-24T12:04:25.497105",
+    "end_time": "2025-06-24T12:04:25.595979"
+  },
+  "system_info": {
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "system": "Linux",
+    "release": "6.6.87.2-microsoft-standard-WSL2",
+    "version": "#1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "python_version": "3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0]"
+  },
+  "verification_results": [
+    {
+      "test_name": "Kernel FIPS Mode",
+      "status": "DISABLED",
+      "details": "FIPS mode indicators not found",
+      "recommendation": "Enable FIPS mode: 'fips=1' kernel parameter or system configuration",
+      "timestamp": "2025-06-24T12:04:25.498766"
+    },
+    {
+      "test_name": "OpenSSL FIPS",
+      "status": "NOT_DETECTED",
+      "details": "OpenSSL version: OpenSSL 3.0.2 15 Mar 2022 (Library: OpenSSL 3.0.2 15 Mar 2022)\nbuilt on: Wed May 24 17:12:55 2023 UTC\nplatform: debian-amd64\noptions:  bn(64,64)\ncompiler: gcc -fPIC -pthread -m64 -Wa,--noexecstack -Wall -Wa,--noexecstack -g -O2 -ffile-prefix-map=/build/openssl-Z1YLmC/openssl-3.0.2=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security -DOPENSSL_TLS_SECURITY_LEVEL=2 -DOPENSSL_USE_NODELETE -DL_ENDIAN -DOPENSSL_PIC -DOPENSSL_BUILDING_OPENSSL -DNDEBUG -Wdate-time -D_FORTIFY_SOURCE=2\nOPENSSLDIR: \"/usr/lib/ssl\"\nENGINESDIR: \"/usr/lib/x86_64-linux-gnu/engines-3\"\nMODULESDIR: \"/usr/lib/x86_64-linux-gnu/ossl-modules\"\nSeeding source: os-specific\nCPUINFO: OPENSSL_ia32cap=0xfeda32035f8bffff:0x400704219c27a9",
+      "recommendation": "Install FIPS-validated OpenSSL or enable FIPS mode",
+      "timestamp": "2025-06-24T12:04:25.510022"
+    },
+    {
+      "test_name": "OpenSSL FIPS Provider",
+      "status": "NOT_AVAILABLE",
+      "details": "Available providers: Providers:\n  default\n    name: OpenSSL Default Provider\n    version: 3.0.2\n    status: active",
+      "recommendation": "Configure FIPS provider in OpenSSL",
+      "timestamp": "2025-06-24T12:04:25.512138"
+    },
+    {
+      "test_name": "Python SSL FIPS",
+      "status": "NOT_DETECTED",
+      "details": "SSL Version: OpenSSL 3.0.2 15 Mar 2022, Version Info: (3, 0, 0, 2, 0)",
+      "recommendation": "Python may not be using FIPS-enabled OpenSSL",
+      "timestamp": "2025-06-24T12:04:25.512175"
+    },
+    {
+      "test_name": "Python SSL FIPS Mode",
+      "status": "NOT_AVAILABLE",
+      "details": "FIPS mode function not available",
+      "recommendation": "",
+      "timestamp": "2025-06-24T12:04:25.512182"
+    },
+    {
+      "test_name": "Library - cryptography",
+      "status": "AVAILABLE",
+      "details": "Backend: openssl",
+      "recommendation": "Verify backend is FIPS-validated",
+      "timestamp": "2025-06-24T12:04:25.592714"
+    },
+    {
+      "test_name": "Library - pycryptodome",
+      "status": "NOT_AVAILABLE",
+      "details": "Library not installed",
+      "recommendation": "",
+      "timestamp": "2025-06-24T12:04:25.593149"
+    },
+    {
+      "test_name": "Library - pyopenssl",
+      "status": "NOT_AVAILABLE",
+      "details": "Library not installed",
+      "recommendation": "",
+      "timestamp": "2025-06-24T12:04:25.593402"
+    },
+    {
+      "test_name": "Library - hashlib",
+      "status": "AVAILABLE",
+      "details": "Available algorithms: 18, Guaranteed: 14",
+      "recommendation": "Ensure using FIPS-validated implementations",
+      "timestamp": "2025-06-24T12:04:25.593425"
+    },
+    {
+      "test_name": "FIPS Configuration Files",
+      "status": "NOT_FOUND",
+      "details": "No FIPS configuration files found in standard locations",
+      "recommendation": "Check if FIPS configuration is needed for your setup",
+      "timestamp": "2025-06-24T12:04:25.593942"
+    },
+    {
+      "test_name": "FIPS Behavior - MD5 Hash (should be rejected in FIPS mode)",
+      "status": "WARNING",
+      "details": "Non-FIPS algorithm executed successfully: 098f6bcd4621d373...",
+      "recommendation": "System may not be enforcing FIPS mode strictly",
+      "timestamp": "2025-06-24T12:04:25.594074"
+    },
+    {
+      "test_name": "FIPS Behavior - SHA1 Hash (may be rejected in strict FIPS mode)",
+      "status": "PASS",
+      "details": "FIPS-approved algorithm executed: a94a8fe5ccb19ba6...",
+      "recommendation": "",
+      "timestamp": "2025-06-24T12:04:25.594289"
+    },
+    {
+      "test_name": "FIPS Behavior - SHA256 Hash (should work in FIPS mode)",
+      "status": "PASS",
+      "details": "FIPS-approved algorithm executed: 9f86d081884c7d65...",
+      "recommendation": "",
+      "timestamp": "2025-06-24T12:04:25.594300"
+    },
+    {
+      "test_name": "SSL Cipher Suite",
+      "status": "INFO",
+      "details": "Total ciphers: 17, FIPS-compatible: 15",
+      "recommendation": "Ensure only FIPS-approved ciphers are used in production",
+      "timestamp": "2025-06-24T12:04:25.595706"
+    }
+  ]
+}
